@@ -8,3 +8,22 @@ GET http://localhost:3001/api/persons/10
 
 ###
 GET http://localhost:3001/api/info
+
+###
+DELETE http://localhost:3001/api/persons/2
+
+###
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+  "name": "Sakari",
+  "number": "040-123456"
+}
+
+###
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+}
