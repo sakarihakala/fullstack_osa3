@@ -27,3 +27,18 @@ Content-Type: application/json
 
 {
 }
+### Ei onnistu ilman nimeä
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+  "number": "040-123456"
+}
+
+### Ei onnistu ilman numeroa
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+  "name": "Sakari"
+}

@@ -61,8 +61,16 @@ app.post('/api/persons', (req,res) => {
     const body = req.body
 
     if (!body.name) {
-        res.status(400).json({
+        console.log('Yhteystiedolta puuttuu nimi, ei tallenneta.')
+        return res.status(400).json({
             error: "Nimi on pakollinen"
+        })
+    }
+
+    if (!body.number) {
+        console.log('Yhteystiedolta puuttuu numero, ei tallenneta.')
+        return res.status(400).json({
+            error: "Numero on pakollinen"
         })
     }
 
