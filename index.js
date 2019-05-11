@@ -1,8 +1,10 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const morgan = require('morgan')
 
 const app = express()
 app.use(bodyParser.json())
+app.use(morgan('tiny'))
 
 let persons = [
     {
@@ -57,7 +59,6 @@ app.delete('/api/persons/:id', (req, res) => {
 })
 
 app.post('/api/persons', (req,res) => {
-    console.log(req.body)
     const body = req.body
 
     if (!body.name) {
@@ -79,7 +80,6 @@ app.post('/api/persons', (req,res) => {
         name: req.body.name,
         number: req.body.number
     })
-    console.log(person)
     persons = persons.concat(person)
 
     res.json(person)
